@@ -14,5 +14,3 @@ def registro_view(request):
         form = RegistroForm()
     return render(request, '../templates/registro.html', {'form': form})
 
-def registro_exitoso_view(request):
-    return render(request, '../templates/registroExitoso.html')
