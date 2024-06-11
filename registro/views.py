@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib import messages
 
 # Create your views here.
 from django.shortcuts import render, redirect
@@ -9,7 +10,8 @@ def registro_view(request):
         form = RegistroForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('registro_exitoso')
+            messages.success(request, '¡Registro exitoso!')
+            return redirect('/')
     else:
         form = RegistroForm()
     return render(request, '../templates/registro.html', {'form': form})

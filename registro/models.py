@@ -7,7 +7,7 @@ class Registro(models.Model):
     rut = models.CharField(max_length=12)
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
-    fecha = models.DateField()
+    fecha = models.CharField(max_length=100)
     TIPO_CHOICES = [
         ('Reclamo', 'Reclamo'),
         ('Felicitaciones', 'Felicitaciones'),
