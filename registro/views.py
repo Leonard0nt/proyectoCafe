@@ -11,7 +11,7 @@ def registro_view(request):
         if form.is_valid():
             form.save()
             messages.success(request, '¡Registro exitoso!')
-            return redirect('/')
+            return redirect(request.path)
     else:
         form = RegistroForm()
     return render(request, '../templates/registro.html', {'form': form})
